@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">JoynCon</string>
+    <string name="accessibility_service_label">JoynCon Button Fallback</string>
+    <string name="accessibility_service_description">Lets JoynCon receive and merge Joy-Con controller button presses while a game is in the foreground, when the faster uinput-based merge path is unavailable on this device. Only key events from Nintendo Joy-Con controllers are acted on; all other key events are passed through untouched. Does not read screen content, and no data leaves your device.</string>
+    <string name="notification_channel_name">JoynCon status</string>
+    <string name="notification_title_merging">JoynCon active</string>
+    <string name="notification_title_stopped">JoynCon stopped</string>
+    <string name="accessibility_disclosure_title">Accessibility permission</string>
+    <string name="accessibility_disclosure_body">JoynCon uses the Accessibility Service API only to receive button presses from your connected Joy-Con controllers while another app (such as a game) is in the foreground, and to remap them into a single merged controller.\n\nIt does not read screen content, text you type, or any other app data, and nothing is collected or sent off your device.\n\nIf you accept, Android\'s Accessibility settings will open — select \"JoynCon Button Fallback\" and turn it on.</string>
+</resources>
