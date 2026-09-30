@@ -158,3 +158,6 @@ Requires Python 3 with Pillow.
 ## Privacy
 
 JoynCon collects no data and has no internet permission. See [PRIVACY.md](PRIVACY.md).
+
+## AI Disclaimer
+This was developed with AI assistance. The artwork was assisted but only in the concept phase. I created it after getting some ideas.
