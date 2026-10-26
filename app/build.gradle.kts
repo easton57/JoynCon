@@ -1,16 +1,7 @@
-import java.util.Properties
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.plugin.compose")
     id("org.jetbrains.kotlin.plugin.serialization")
-}
-
-// Upload-key credentials for Play release builds. Kept out of version control; see
-// keystore.properties.example at the repo root.
-val keystoreProperties = Properties().apply {
-    val file = rootProject.file("keystore.properties")
-    if (file.exists()) file.inputStream().use { load(it) }
 }
 
 android {
@@ -44,25 +35,10 @@ android {
         }
     }
 
-    signingConfigs {
-        if (keystoreProperties.isNotEmpty()) {
-            create("release") {
-                storeFile = rootProject.file(keystoreProperties.getProperty("storeFile"))
-                storePassword = keystoreProperties.getProperty("storePassword")
-                keyAlias = keystoreProperties.getProperty("keyAlias")
-                keyPassword = keystoreProperties.getProperty("keyPassword")
-            }
-        }
-    }
-
     buildTypes {
         release {
             isMinifyEnabled = true
-            isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            signingConfigs.findByName("release")?.let { signingConfig = it }
-            // Uploads native symbols with the AAB so Play Console can symbolicate native crashes.
-            ndk { debugSymbolLevel = "FULL" }
         }
     }
 

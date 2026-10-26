@@ -1,2 +1,2 @@
--keep class com.eastonseidel.joyncon.shizuku.** { *; }
+-keep class dev.eastonseidel.joyncon.shizuku.** { *; }
 -keep class rikka.shizuku.** { *; }
